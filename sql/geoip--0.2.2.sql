@@ -36,6 +36,12 @@ CREATE TABLE geoip_asn (
     name        TEXT        NOT NULL
 );
 
+CREATE TABLE geoip_region (
+    country     CHAR(2)       NOT NULL,
+    region      CHAR(2)       NOT NULL,
+    name        TEXT          NOT NULL
+);
+
 -- indexes (might be improved to handle index-only scans)
 CREATE INDEX geoip_country_ip_idx ON geoip_country (begin_ip DESC);
 CREATE INDEX geoip_city_block_ip_idx ON geoip_city_block (begin_ip DESC);
